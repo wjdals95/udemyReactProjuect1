@@ -1,6 +1,10 @@
-import Expenses from "./components/Expenses";
+import React from "react";
 
-function App() {
+import NewExpenses from "./components/NewExpenses/NewExpenses";
+import Expenses from "./components/Expenses/Expenses";
+
+
+const App = () => {
   const expenses = [
     {
       id: "e1",
@@ -24,10 +28,21 @@ function App() {
   ];
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpenses />
       <Expenses items = {expenses} />
     </div>
   );
+
+  /* 
+    JSX코드
+    return React.createElement(
+      'div',
+      {},
+      React.createElement('h2',{},'Lets get started!'),
+      React.createElement(Expenses,{items:expenses})
+    );
+  */
+
 }
 
 export default App;
